@@ -1,0 +1,35 @@
+
+{%extends 'bases/base.html '%}
+
+{% block page_content%}
+
+<form method="post" class="form-inline" action="">
+    {%csrf_token%}
+    <div class="card border-left-danger shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">¿Esta seguro que desea eliminar {{ obj.descripcion }}?</div>
+                        <button type="submit" class="btn btn-warning">Eliminar</button>
+                        <a href="{% url 'inv:categoria_list' %}" class="btn btn-danger"> <span class="fa fa-undo"></span>Cancelar</a>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block js_page%}
+{%endblock%}
+
+
